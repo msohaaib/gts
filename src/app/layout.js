@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body cz-shortcut-listen="true">
         <Navbar />
-        <main className="pt-[80px]">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

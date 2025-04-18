@@ -46,7 +46,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 bg-white shadow-md px-4 transition-all duration-300 ${
+      className={`w-full z-50 bg-white shadow-md px-4 transition-all duration-300 ${
         isOpen ? "py-6" : "py-2"
       } md:py-4`}
     >
