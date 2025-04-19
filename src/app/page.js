@@ -36,17 +36,18 @@ const images = [
   },
 ];
 
+
+
 export default function Home() {
   return (
     <div className="relative w-screen h-[90vh]">
       <Swiper
         spaceBetween={0}
         slidesPerView={1}
-        loop={true}
+        loop={false}
         speed={1000}
         autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
+          stopOnLastSlide: true
         }}
         modules={[Autoplay]}
         className="w-full h-full"
@@ -57,14 +58,14 @@ export default function Home() {
               <Image
                 src={item.src}
                 alt={`Slide ${index + 1}`}
+                width={100}
                 height={500}
-                width={500}
-                className="object-cover z-50"
+                className="object-cover z-50 w-full h-full"
                 priority
                 onError={(e) => console.error("Image failed to load:", e)}
               />
 
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white text-center px-6 z-10">
+              <div className="absolute inset-0 bg-black bg-transparent flex flex-col items-center justify-center text-white text-center px-6 z-10">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4">
                   {item.heading}
                 </h1>
