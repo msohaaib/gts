@@ -20,21 +20,21 @@ const images = [
     src: "/HomeSection/Home2.png",
     heading: "Innovate with GTS",
     text: "We bring ideas to life through tech.",
-    buttonLabel: "Our Work",
+    buttonLabel: "Learn More",
     buttonLink: "/projects",
   },
   {
     src: "/HomeSection/Home3.jpg",
     heading: "Creative Design Studio",
     text: "Where aesthetics meet functionality.",
-    buttonLabel: "Explore Designs",
+    buttonLabel: "Learn More",
     buttonLink: "/designs",
   },
   {
     src: "/HomeSection/Home4.jpg",
     heading: "Your Digital Partner",
     text: "Build, scale, and grow with confidence.",
-    buttonLabel: "Get in Touch",
+    buttonLabel: "Learn More",
     buttonLink: "/contact",
   },
 ];
@@ -115,9 +115,9 @@ export default function Home() {
                     {item.text}
                   </p>
                   <Link href={item.buttonLink}>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition drop-shadow-md">
+                    <Obutton className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition drop-shadow-md">
                       {item.buttonLabel}
-                    </button>
+                    </Obutton>
                   </Link>
                 </div>
               </div>
