@@ -1,4 +1,3 @@
-// components/Navbar.jsx
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
@@ -77,7 +76,7 @@ const Navbar = () => {
 
       {/* Navbar */}
       <nav
-        className={`w-full z-50 bg-white shadow-md px-4 transition-all duration-300 ${
+        className={`w-full fixed top-0 z-50 bg-opacity-30 px-4 transition-all duration-300 ${
           isOpen ? "py-4" : "py-1"
         } md:py-2`}
       >
@@ -90,7 +89,7 @@ const Navbar = () => {
               width={48}
               height={24}
               priority
-              className="object-contain"
+              className="object-contain drop-shadow-md"
             />
           </Link>
 
@@ -101,7 +100,7 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 isActive={pathname === link.href}
-                className="font-medium text-base"
+                className="font-medium text-base drop-shadow-md"
               >
                 {link.name}
               </Button>
@@ -117,7 +116,7 @@ const Navbar = () => {
             aria-expanded={isOpen}
           >
             <svg
-              className="w-6 h-6 text-gray-800"
+              className="w-6 h-6 text-white drop-shadow-md"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -134,7 +133,7 @@ const Navbar = () => {
           {/* Mobile Menu */}
           <div
             ref={menuRef}
-            className={`fixed inset-0 bg-white bg-opacity-90 backdrop-blur-sm flex flex-col items-center justify-center space-y-8 transition-transform duration-300 z-40 transform
+            className={`fixed inset-0 bg-transparent bg-opacity-90 backdrop-blur-sm flex flex-col items-center justify-center space-y-8 transition-transform duration-300 z-40 transform
             ${isOpen ? "translate-x-0" : "translate-x-full"}
             md:hidden`}
           >
@@ -144,7 +143,7 @@ const Navbar = () => {
                 href={link.href}
                 isActive={pathname === link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-2xl font-semibold"
+                className="text-2xl font-semibold drop-shadow-md"
               >
                 {link.name}
               </Button>

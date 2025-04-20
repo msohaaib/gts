@@ -1,3 +1,4 @@
+// app/page.js
 "use client";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,10 +11,10 @@ import Obutton from "../components/OButton";
 const images = [
   {
     src: "/HomeSection/home1.jpg",
-    heading: "Empower Your Business",
-    text: "Smart solutions for modern challenges.",
+    heading: "Welcom to Gafar Technical Services LLC",
+    text: "Your Sloagan goes here.",
     buttonLabel: "Learn More",
-    buttonLink: "/services",
+    buttonLink: "/about",
   },
   {
     src: "/HomeSection/Home2.png",
@@ -79,54 +80,63 @@ export default function Home() {
   return (
     <div className="relative w-screen">
       {/* Swiper Slider */}
-      <Swiper
-        spaceBetween={0}
-        slidesPerView={1}
-        loop={false}
-        speed={1000}
-        autoplay={{
-          delay: 3000,
-          stopOnLastSlide: false,
-        }}
-        modules={[Autoplay]}
-        className="w-full h-full"
-      >
-        {images.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative w-full h-[90vh]">
-              <Image
-                src={item.src}
-                alt={`Slide ${index + 1}`}
-                width={1920}
-                height={1080}
-                className="object-cover w-full h-full"
-                priority
-                onError={(e) => console.error("Image failed to load:", e)}
-              />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6 z-10">
-                <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                  {item.heading}
-                </h1>
-                <p className="text-lg md:text-xl mb-6">{item.text}</p>
-                <Link href={item.buttonLink}>
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition">
-                    {item.buttonLabel}
-                  </button>
-                </Link>
+      <div className="absolute top-0 left-0 w-full h-[100vh] z-10">
+        <Swiper
+          spaceBetween={0}
+          slidesPerView={1}
+          loop={true}
+          speed={1000}
+          autoplay={{
+            delay: 3000,
+            stopOnLastSlide: false,
+          }}
+          modules={[Autoplay]}
+          className="w-full h-full"
+        >
+          {images.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="relative w-full h-full">
+                <Image
+                  src={item.src}
+                  alt={`Slide ${index + 1}`}
+                  width={1920}
+                  height={1080}
+                  className="object-cover w-full h-full"
+                  priority
+                  onError={(e) => console.error("Image failed to load:", e)}
+                />
+                {/* Overlay for readability */}
+                <div className="bg-black bg-opacity-40" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6 z-20">
+                  <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+                    {item.heading}
+                  </h1>
+                  <p className="text-lg md:text-xl mb-6 drop-shadow-lg">
+                    {item.text}
+                  </p>
+                  <Link href={item.buttonLink}>
+                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition drop-shadow-md">
+                      {item.buttonLabel}
+                    </button>
+                  </Link>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* Spacer to prevent content overlap */}
+      <div className="h-[100vh]" />
 
       {/* Introduction Section */}
-      <section className="py-16 px-6 bg-gradient-to-r from-gray-50 to-gray-100">
+      <section className="py-16 px-6 bg-gradient-to-r from-gray-50 to-gray-100 relative z-30">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="text-gray-800 animate-fadeIn">
             <p className="text-lg md:text-xl font-semibold text-[#F58634] mb-2">
               Introduction
             </p>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">
+            <h2 className="text-3xl text-[#F58634] md:text-5xl font-bold mb-4 md:mb-6 leading-tight">
               Expert Technical Services for Your Projects
             </h2>
             <div className="space-y-4 text-lg md:text-xl text-gray-600">
@@ -167,7 +177,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 px-6 bg-white">
+      <section className="py-16 px-6 bg-white relative z-30">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
           <div className="relative h-72 md:h-[32rem] w-full overflow-hidden rounded-xl shadow-lg animate-fadeIn">
             <Image
@@ -212,7 +222,7 @@ export default function Home() {
       </section>
 
       {/* Valued Clients Section */}
-      <section className="py-16 px-6 bg-gray-50">
+      <section className="py-16 px-6 bg-gray-50 relative z-30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-12 relative animate-fadeIn">
             Our Valued Clients
@@ -228,7 +238,7 @@ export default function Home() {
                   className="relative bg-white bg-opacity-20 backdrop-blur-lg p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 ease-in-out animate-bounceIn flex flex-col items-center justify-center space-y-3 md:flex-row md:space-y-0 md:space-x-3 border border-[gradient-to-r from-blue-500 to-blue-300]"
                   style={{
                     transform: `rotate(${rotation}deg) translateY(${offsetY}px)`,
-                    animationDelay: `${(0.1 * (index + 1)).toFixed(1)}s`, // Fixed precision
+                    animationDelay: `${(0.1 * (index + 1)).toFixed(1)}s`,
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = `rotate(${
@@ -264,7 +274,7 @@ export default function Home() {
       </section>
 
       {/* Achievements Section */}
-      <section className="py-16 px-6 bg-gradient-to-b from-gray-100 to-gray-200">
+      <section className="py-16 px-6 bg-gradient-to-b from-gray-100 to-gray-200 relative z-30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-12 relative animate-fadeIn">
             Our Achievements
