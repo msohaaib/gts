@@ -4,10 +4,10 @@ import Preloader from "../components/Preloader";
 import "../styles/globals.css";
 
 export const metadata = {
-  title: "GTS",
+  title: "GAFAR TECHNICAL SERVICES LLC",
   description: "A simple static website with information about us.",
   icons: {
-    icon: "/logo.svg", // ✅ This is the favicon reference
+    icon: "/logo.svg",
   },
 };
 

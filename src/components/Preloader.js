@@ -16,11 +16,11 @@ export default function Preloader() {
   if (!loading) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-white flex items-center justify-center">
+    <div className="fixed inset-0 z-[9999] bg-white flex items-center justify-center">
       <Image
         src="/logo.svg"
-        alt="logo"
-        width={96} // same as w-24 in Tailwind (24 * 4 = 96px)
+        alt="Preloader logo"
+        width={96}
         height={96}
         className="animate-bounce"
       />

@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { useState, useEffect } from "react";
+import Obutton from "../components/OButton";
 
 const images = [
   {
@@ -122,7 +123,7 @@ export default function Home() {
       <section className="py-16 px-6 bg-gradient-to-r from-gray-50 to-gray-100">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="text-gray-800 animate-fadeIn">
-            <p className="text-lg md:text-xl font-semibold text-blue-600 mb-2">
+            <p className="text-lg md:text-xl font-semibold text-[#F58634] mb-2">
               Introduction
             </p>
             <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">
@@ -131,8 +132,10 @@ export default function Home() {
             <div className="space-y-4 text-lg md:text-xl text-gray-600">
               <p>
                 Welcome to{" "}
-                <span className="font-semibold">GAFAR TECHNICAL SERVICES</span>,
-                your go-to provider for top-tier construction support and
+                <span className="font-semibold text-[#F58634]">
+                  GAFAR TECHNICAL SERVICES
+                </span>
+                , your go-to provider for top-tier construction support and
                 technical expertise.
               </p>
               <p>
@@ -146,9 +149,9 @@ export default function Home() {
               </p>
             </div>
             <Link href="/contact">
-              <button className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition-transform duration-300 hover:scale-105">
+              <Obutton className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition-transform duration-300 hover:scale-105">
                 Contact Us
-              </button>
+              </Obutton>
             </Link>
           </div>
           <div className="relative h-72 md:h-96 w-full overflow-hidden rounded-xl shadow-lg">
@@ -175,15 +178,17 @@ export default function Home() {
               priority
             />
           </div>
-          <div className="bg-gradient-to-b from-gray-50 to-gray-100 p-8 rounded-xl shadow-md animate-fadeIn">
+          <div className="p-8 rounded-xl animate-fadeIn">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 md:mb-6 relative">
               About Gafar Technical Services
-              <span className="absolute bottom-[-8px] left-0 w-24 h-1 bg-blue-600 shadow-md"></span>
+              <span className="absolute bottom-[-8px] left-0 w-24 h-1 bg-[#F58634] shadow-md"></span>
             </h2>
             <div className="text-base md:text-lg text-gray-600 space-y-3 md:space-y-4">
               <p>
                 With a foundation built on experience and innovation,{" "}
-                <span className="font-semibold">GAFAR TECHNICAL SERVICES</span>{" "}
+                <span className="font-semibold text-[#F58634]">
+                  GAFAR TECHNICAL SERVICES
+                </span>{" "}
                 is a trusted name in the construction and infrastructure
                 industry.
               </p>
@@ -198,9 +203,9 @@ export default function Home() {
               </p>
             </div>
             <Link href="/about">
-              <button className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition-transform duration-300 hover:scale-105 border border-blue-700 shadow-sm">
+              <Obutton className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition-transform duration-300 hover:scale-105 border border-blue-700 shadow-sm">
                 Learn More
-              </button>
+              </Obutton>
             </Link>
           </div>
         </div>
@@ -211,7 +216,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-12 relative animate-fadeIn">
             Our Valued Clients
-            <span className="absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full"></span>
+            <span className="absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 w-32 h-1 bg-[#F58634] rounded-full"></span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {clients.map((client, index) => {
@@ -220,7 +225,7 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="relative bg-white bg-opacity-20 backdrop-blur-lg p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 ease-in-out animate-bounceIn flex flex-col items-center justify-center space-y-3 md:flex-row md:space-y-0 md:space-x-3 border border-gradient-to-r from-blue-500 to-blue-300"
+                  className="relative bg-white bg-opacity-20 backdrop-blur-lg p-4 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 ease-in-out animate-bounceIn flex flex-col items-center justify-center space-y-3 md:flex-row md:space-y-0 md:space-x-3 border border-[gradient-to-r from-blue-500 to-blue-300]"
                   style={{
                     transform: `rotate(${rotation}deg) translateY(${offsetY}px)`,
                     animationDelay: `${(0.1 * (index + 1)).toFixed(1)}s`, // Fixed precision
@@ -239,7 +244,7 @@ export default function Home() {
                       src={client.logo}
                       alt={`${client.name} logo`}
                       fill
-                      className="object-contain rounded-full hover:scale-110 hover:rotate-6 transition-transform duration-300"
+                      className="rounded-full hover:scale-110 hover:rotate-6 transition-transform duration-300"
                       onError={(e) =>
                         console.error(`Failed to load logo for ${client.name}`)
                       }
@@ -249,7 +254,7 @@ export default function Home() {
                     <p className="text-sm md:text-base font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
                       {client.name}
                     </p>
-                    <span className="block w-16 h-0.5 mx-auto md:mx-0 mt-2 bg-gradient-to-r from-blue-500 to-blue-300 rounded-full"></span>
+                    <span className="block w-16 h-0.5 mx-auto md:mx-0 mt-2 bg-[#F58634] rounded-full"></span>
                   </div>
                 </div>
               );
@@ -263,7 +268,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-12 relative animate-fadeIn">
             Our Achievements
-            <span className="absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-blue-600 to-green-600 rounded-full"></span>
+            <span className="absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 w-32 h-1 bg-[#F58634] rounded-full"></span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div

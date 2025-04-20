@@ -1,10 +1,12 @@
+// components/Navbar.jsx
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, useScroll, useSpring } from "framer-motion";
+import Button from "./Button";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,13 +65,13 @@ const Navbar = () => {
         style={{
           scaleX,
           position: "fixed",
-          top: 0, // Place at the very top of the viewport
+          top: 0,
           left: 0,
           right: 0,
-          height: 4, // Slim bar for a sleek look
+          height: 4,
           originX: 0,
-          backgroundColor: "#F58634", // Matches your theme
-          zIndex: 60, // Above the Navbar (z-50) but below mobile menu (z-40 when open)
+          backgroundColor: "#F58634",
+          zIndex: 60,
         }}
       />
 
@@ -95,17 +97,14 @@ const Navbar = () => {
           {/* Desktop Nav */}
           <div className="hidden md:flex space-x-6 items-center">
             {visibleLinks.map((link) => (
-              <Link
+              <Button
                 key={link.name}
                 href={link.href}
-                className={`font-medium transition-colors ${
-                  pathname === link.href
-                    ? "text-[#F58634]"
-                    : "text-gray-800 hover:text-[#F58634]"
-                }`}
+                isActive={pathname === link.href}
+                className="font-medium text-base"
               >
                 {link.name}
-              </Link>
+              </Button>
             ))}
           </div>
 
@@ -140,18 +139,15 @@ const Navbar = () => {
             md:hidden`}
           >
             {visibleLinks.map((link) => (
-              <Link
+              <Button
                 key={link.name}
                 href={link.href}
-                className={`text-2xl font-semibold transition-colors ${
-                  pathname === link.href
-                    ? "text-[#F58634]"
-                    : "text-gray-800 hover:text-[#F58634]"
-                }`}
+                isActive={pathname === link.href}
                 onClick={() => setIsOpen(false)}
+                className="text-2xl font-semibold"
               >
                 {link.name}
-              </Link>
+              </Button>
             ))}
           </div>
         </div>
