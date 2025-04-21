@@ -6,7 +6,7 @@ const Button = ({ href, children, isActive, onClick, className }) => {
     <Link href={href} onClick={onClick} className={`group ${className}`}>
       <div className="relative overflow-hidden inline-block">
         <span
-          className={`block transition-all duration-[500ms] ease-out group-hover:-translate-y-7 ${
+          className={`block transition-all duration-[500ms] font-bold ease-out group-hover:-translate-y-7 ${
             isActive
               ? "text-[#F58634]"
               : "text-gray-800 group-hover:text-[#F58634]"

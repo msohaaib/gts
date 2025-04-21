@@ -86,8 +86,8 @@ const Navbar = () => {
             <Image
               src="/logo.svg"
               alt="Logo"
-              width={48}
-              height={24}
+              width={64}
+              height={32}
               priority
               className="object-contain drop-shadow-md"
             />

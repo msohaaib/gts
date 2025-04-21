@@ -12,28 +12,28 @@ const images = [
   {
     src: "/HomeSection/home1.jpg",
     heading: "Welcom to Gafar Technical Services LLC",
-    text: "Your Sloagan goes here.",
+    text: "Professional Technical Services for All Your Construction and Infrastructure Needs.",
     buttonLabel: "Learn More",
     buttonLink: "/about",
   },
   {
-    src: "/HomeSection/Home2.png",
-    heading: "Innovate with GTS",
-    text: "We bring ideas to life through tech.",
+    src: "/HomeSection/Home2.jpg",
+    heading: "Water proofing",
+    text: "We offer professional waterproofing solutions to protect your property from water damage.",
     buttonLabel: "Learn More",
-    buttonLink: "/projects",
+    buttonLink: "/services",
   },
   {
     src: "/HomeSection/Home3.jpg",
-    heading: "Creative Design Studio",
-    text: "Where aesthetics meet functionality.",
+    heading: "Core Cutting",
+    text: "Our core cutting service is perfect for creating precise, circular holes in concrete, brick, or stone surfaces.",
     buttonLabel: "Learn More",
     buttonLink: "/designs",
   },
   {
-    src: "/HomeSection/Home4.jpg",
-    heading: "Your Digital Partner",
-    text: "Build, scale, and grow with confidence.",
+    src: "/HomeSection/Home4.jpeg",
+    heading: "Cable Pulling",
+    text: "Our cable pulling services are designed to provide efficient and safe installation of electrical and communication cables for commercial, industrial, and residential projects.",
     buttonLabel: "Learn More",
     buttonLink: "/contact",
   },
@@ -108,10 +108,10 @@ export default function Home() {
                 {/* Overlay for readability */}
                 <div className="bg-black bg-opacity-40" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6 z-20">
-                  <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+                  <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg bg-[#F58634]">
                     {item.heading}
                   </h1>
-                  <p className="text-lg md:text-xl mb-6 drop-shadow-lg">
+                  <p className="text-lg md:text-xl mb-6 drop-shadow-lg bg-[#F58634]">
                     {item.text}
                   </p>
                   <Link href={item.buttonLink}>
@@ -130,14 +130,11 @@ export default function Home() {
       <div className="h-[100vh]" />
 
       {/* Introduction Section */}
-      <section className="py-16 px-6 bg-gradient-to-r from-gray-50 to-gray-100 relative z-30">
+      <section className="py-16 px-6 bg-gradient-to-r from-gray-50 via-orange-50 to-blue-50 bg-opacity-95 relative z-30 bg-lines-pattern">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="text-gray-800 animate-fadeIn">
-            <p className="text-lg md:text-xl font-semibold text-[#F58634] mb-2">
-              Introduction
-            </p>
-            <h2 className="text-3xl text-[#F58634] md:text-5xl font-bold mb-4 md:mb-6 leading-tight">
-              Expert Technical Services for Your Projects
+            <h2 className="text-3xl text-black md:text-5xl font-bold mb-4 md:mb-6 leading-tight text-center">
+              Who We Are
             </h2>
             <div className="space-y-4 text-lg md:text-xl text-gray-600">
               <p>
@@ -164,12 +161,12 @@ export default function Home() {
               </Obutton>
             </Link>
           </div>
-          <div className="relative h-72 md:h-96 w-full overflow-hidden rounded-xl shadow-lg">
+          <div className="relative h-72 md:h-96 w-full overflow-hidden rounded-tl-3xl rounded-br-3xl shadow-lg ring-2 ring-[#F58634] ring-opacity-40">
             <Image
               src="/HomeSection/Home3.jpg"
               alt="Technical Services"
               fill
-              className="object-cover hover:scale-105 transition-transform duration-500 ease-in-out"
+              className="object-cover hover:scale-105 transition-transform duration-500 ease-in-out rounded-tl-3xl rounded-br-3xl"
               priority
             />
           </div>
