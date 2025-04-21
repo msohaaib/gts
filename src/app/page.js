@@ -12,7 +12,7 @@ const images = [
   {
     src: "/HomeSection/home1.jpg",
     heading: "Welcome to Gafar Technical Services LLC",
-    text: "Professional Technical Services for All Your Construction and Infrastructure Needs.",
+    text: "Your trusted partner in construction excellence.",
     buttonLabel: "Learn More",
     buttonLink: "/about",
   },
@@ -133,12 +133,15 @@ export default function Home() {
                 <div className="bg-black bg-opacity-40" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6 z-20">
                   <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-                    {item.heading}
+                    <span className="relative bottom-5">Welcome to</span> <br />
+                    <span className="text-[#F58634]">
+                      Gafar Technical Services LLC
+                    </span>
                   </h1>
-                  <p className="text-lg md:text-xl mb-6 drop-shadow-lg">
+                  <p className="text-lg md:text-2xl italic mb-6 drop-shadow-lg">
                     {item.text}
                   </p>
-                  <Link href={item.buttonLink}>
+                  <Link href={item.buttonLink} className="mt-6">
                     <Obutton className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition drop-shadow-md">
                       {item.buttonLabel}
                     </Obutton>
@@ -153,10 +156,10 @@ export default function Home() {
       <div className="h-[100vh]" />
 
       {/* Introduction Section */}
-      <section className="bg-lines-pattern">
+      <section className="bg-lines-pattern mb-28">
         <div className="my-12">
-          <div className="mb-3">
-            <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-800 relative animate-fadeIn my-2">
+          <div className="">
+            <h1 className="pl-96 text-left text-3xl md:text-5xl font-bold text-gray-800 relative animate-fadeIn my-2">
               WHO WE ARE
             </h1>
           </div>
@@ -201,7 +204,7 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <div className="my-12">
+      <div className="mt-12">
         <div className="mb-3">
           <h1 className="text-center text-3xl md:text-5xl font-bold text-gray-800 relative animate-fadeIn my-2">
             WHY CHOOSE US

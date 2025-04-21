@@ -86,7 +86,7 @@ const Navbar = () => {
 
       {/* Navbar */}
       <nav
-        className={`w-full fixed top-0 z-50 px-4 transition-all duration-300 ${
+        className={` my-6 w-full fixed top-0 z-50 px-4 transition-all duration-300 ${
           isOpen ? "py-4" : "py-1"
         } md:py-2 ${isScrolled ? "hidden" : "bg-transparent"}`}
       >
@@ -96,12 +96,16 @@ const Navbar = () => {
             <Image
               src="/logo.svg"
               alt="Logo"
-              width={96}
-              height={48}
+              width={84}
+              height={42}
               priority
               className="object-contain drop-shadow-md"
             />
           </Link>
+          <h1 className="pr-[35rem] pt-8  justify-center font-extrabold text-3xl">
+            <span className="text-[#F58634]">Gafar Technical</span> <br />{" "}
+            <span className="text-[#373435]">Services LLC</span>
+          </h1>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex space-x-6 items-center">
