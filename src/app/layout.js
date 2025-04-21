@@ -4,8 +4,9 @@ import Preloader from "../components/Preloader";
 import "../styles/globals.css";
 
 export const metadata = {
-  title: "GAFAR TECHNICAL SERVICES LLC",
-  description: "A simple static website with information about us.",
+  title: "Gafar Technical Services LLC",
+  description:
+    "Welcome to Gafar Technical Services LLC, your trusted partner for professional technical services.",
   icons: {
     icon: "/logo.svg",
   },
