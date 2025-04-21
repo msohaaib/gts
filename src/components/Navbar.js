@@ -9,9 +9,19 @@ import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10); // adjust threshold if needed
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Scroll Indicator Logic
   const { scrollYProgress } = useScroll();
@@ -76,9 +86,9 @@ const Navbar = () => {
 
       {/* Navbar */}
       <nav
-        className={`w-full fixed top-0 z-50 bg-opacity-30 px-4 transition-all duration-300 ${
+        className={`w-full fixed top-0 z-50 px-4 transition-all duration-300 ${
           isOpen ? "py-4" : "py-1"
-        } md:py-2`}
+        } md:py-2 ${isScrolled ? "hidden" : "bg-transparent"}`}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo */}
@@ -86,8 +96,8 @@ const Navbar = () => {
             <Image
               src="/logo.svg"
               alt="Logo"
-              width={64}
-              height={32}
+              width={96}
+              height={48}
               priority
               className="object-contain drop-shadow-md"
             />
