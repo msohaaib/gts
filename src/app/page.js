@@ -4,9 +4,10 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { Navigation, Pagination } from "swiper";
 import { useState, useEffect } from "react";
-import Obutton from "../components/OButton"; // Ensure ../components/OButton.js exists and exports a default component
-import CountUp from "react-countup"; // Requires `npm install react-countup`
+import Obutton from "../components/OButton";
+import CountUp from "react-countup";
 
 const images = [
   {
@@ -133,11 +134,19 @@ export default function Home() {
                 <div className="bg-black bg-opacity-40" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6 z-20">
                   <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-                    <span className="relative bottom-5">Welcome to</span> <br />
-                    <span className="text-[#F58634]">
-                      Gafar Technical Services LLC
-                    </span>
+                    {index === 0 ? (
+                      <>
+                        <span className="text-[#F58634]">
+                          {item.heading.split(" ").slice(0, 2).join(" ")}
+                        </span>{" "}
+                        <br />
+                        {item.heading.split(" ").slice(2).join(" ")}{" "}
+                      </>
+                    ) : (
+                      item.heading
+                    )}
                   </h1>
+
                   <p className="text-lg md:text-2xl italic mb-6 drop-shadow-lg">
                     {item.text}
                   </p>
@@ -156,18 +165,15 @@ export default function Home() {
       <div className="h-[100vh]" />
 
       {/* Introduction Section */}
-      <section className="bg-lines-pattern mb-28">
-        <div className="my-12">
-          <div className="">
-            <h1 className="pl-96 text-left text-3xl md:text-5xl font-bold text-gray-800 relative animate-fadeIn my-2">
-              WHO WE ARE
-            </h1>
-          </div>
-          <div className="w-32 h-1 bg-[#F58634] rounded-full mx-auto"></div>
-        </div>
-
+      <section className="bg-lines-pattern my-28">
         <div className="flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto px-4 py-8 bg-white rounded-lg relative z-20 animate-fadeIn">
           <div className="space-y-4 text-lg md:text-xl text-gray-600">
+            <h1 className="text-left text-3xl md:text-5xl font-bold text-gray-800 relative animate-fadeIn my-2">
+              WHO WE ARE
+            </h1>
+
+            <div className="w-32 h-1 bg-[#F58634] rounded-full"></div>
+
             <p>
               Welcome to{" "}
               <span className="font-semibold text-[#F58634]">
@@ -215,37 +221,45 @@ export default function Home() {
 
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-4 gap-8 justify-items-center">
+          <Swiper
+            spaceBetween={30} // Space between slides
+            slidesPerView={3} // Show 3 cards at a time
+            navigation={true} // Add navigation buttons (prev/next)
+            pagination={{ clickable: true }} // Pagination for navigating slides
+            autoplay={{
+              delay: 3000, // Automatically slide every 3 seconds
+              disableOnInteraction: false, // Allow interaction even while autoplay is enabled
+            }}
+            modules={[Navigation, Pagination]} // Import required Swiper modules
+          >
             {strengths.map((strength, index) => (
-              <div
-                key={index}
-                className="w-full max-w-[18rem] flex flex-col rounded-xl bg-white text-gray-700 shadow-lg animate-fadeIn"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl shadow-md">
-                  <Image
-                    src={strength.image || "/HomeSection/home1.jpg"}
-                    alt={strength.title}
-                    fill
-                    className="object-cover rounded-xl hover:scale-105 transition-transform duration-500 ease-in-out"
-                    onError={(e) =>
-                      console.error(
-                        `Failed to load image for ${strength.title}`
-                      )
-                    }
-                  />
+              <SwiperSlide key={index}>
+                <div className="w-full max-w-[18rem] flex flex-col rounded-xl bg-white text-gray-700 shadow-lg animate-fadeIn">
+                  <div className="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl shadow-md">
+                    <Image
+                      src={strength.image || "/HomeSection/home1.jpg"}
+                      alt={strength.title}
+                      fill
+                      className="object-cover rounded-xl hover:scale-105 transition-transform duration-500 ease-in-out"
+                      onError={(e) =>
+                        console.error(
+                          `Failed to load image for ${strength.title}`
+                        )
+                      }
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h5 className="mb-3 block text-xl font-semibold text-gray-900">
+                      {strength.title}
+                    </h5>
+                    <p className="block text-base font-light leading-relaxed text-gray-600">
+                      {strength.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h5 className="mb-3 block text-xl font-semibold text-gray-900">
-                    {strength.title}
-                  </h5>
-                  <p className="block text-base font-light leading-relaxed text-gray-600">
-                    {strength.description}
-                  </p>
-                </div>
-              </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </section>
 

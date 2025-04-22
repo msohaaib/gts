@@ -16,7 +16,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10); // adjust threshold if needed
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -77,7 +77,7 @@ const Navbar = () => {
           top: 0,
           left: 0,
           right: 0,
-          height: 4,
+          height: "0.25rem",
           originX: 0,
           backgroundColor: "#F58634",
           zIndex: 60,
@@ -86,35 +86,39 @@ const Navbar = () => {
 
       {/* Navbar */}
       <nav
-        className={` my-6 w-full fixed top-0 z-50 px-4 transition-all duration-300 ${
-          isOpen ? "py-4" : "py-1"
-        } md:py-2 ${isScrolled ? "hidden" : "bg-transparent"}`}
+        className={`fixed top-0 left-0 w-full z-50 px-4 sm:px-6 lg:px-8 transition-all duration-300 ${
+          isScrolled
+            ? "bg-white/80 backdrop-blur-md shadow-md"
+            : "bg-transparent"
+        } ${isOpen ? "py-4" : "py-2 sm:py-3"}`}
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="z-50" onClick={() => setIsOpen(false)}>
-            <Image
-              src="/logo.svg"
-              alt="Logo"
-              width={84}
-              height={42}
-              priority
-              className="object-contain drop-shadow-md"
-            />
-          </Link>
-          <h1 className="pr-[35rem] pt-8  justify-center font-extrabold text-3xl">
-            <span className="text-[#F58634]">Gafar Technical</span> <br />{" "}
-            <span className="text-[#373435]">Services LLC</span>
-          </h1>
+        <div className="max-w-7xl mx-auto flex flex-wrap items-end justify-between">
+          {/* Logo and Title */}
+          <div className="flex items-end space-x-2 sm:space-x-3 lg:space-x-4">
+            <Link href="/" className="z-50" onClick={() => setIsOpen(false)}>
+              <Image
+                src="/logo.svg"
+                alt="Logo"
+                width={60}
+                height={30}
+                priority
+                className="object-contain drop-shadow-md w-12 sm:w-16 lg:w-20 mb-2"
+              />
+            </Link>
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold leading-tight flex flex-col ">
+              <span className="text-[#F58634]">Gafar Technical</span>
+              <span className="text-[#373435]">Services LLC</span>
+            </h1>
+          </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-6 items-center">
+          <div className="hidden lg:flex space-x-6 items-center mb-4">
             {visibleLinks.map((link) => (
               <Button
                 key={link.name}
                 href={link.href}
                 isActive={pathname === link.href}
-                className="font-medium text-base drop-shadow-md"
+                className="font-medium text-sm lg:text-base drop-shadow-md hover:text-[#F58634] transition-colors"
               >
                 {link.name}
               </Button>
@@ -124,13 +128,13 @@ const Navbar = () => {
           {/* Hamburger Button */}
           <button
             ref={buttonRef}
-            className="md:hidden z-50"
+            className="lg:hidden z-50 p-2"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
             aria-expanded={isOpen}
           >
             <svg
-              className="w-6 h-6 text-white drop-shadow-md"
+              className="w-6 h-6 text-[#373435] drop-shadow-md"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -143,28 +147,29 @@ const Navbar = () => {
               />
             </svg>
           </button>
-
-          {/* Mobile Menu */}
-          <div
-            ref={menuRef}
-            className={`fixed inset-0 bg-transparent bg-opacity-90 backdrop-blur-sm flex flex-col items-center justify-center space-y-8 transition-transform duration-300 z-40 transform
-            ${isOpen ? "translate-x-0" : "translate-x-full"}
-            md:hidden`}
-          >
-            {visibleLinks.map((link) => (
-              <Button
-                key={link.name}
-                href={link.href}
-                isActive={pathname === link.href}
-                onClick={() => setIsOpen(false)}
-                className="text-2xl font-semibold drop-shadow-md"
-              >
-                {link.name}
-              </Button>
-            ))}
-          </div>
         </div>
       </nav>
+
+      {/* Mobile Menu */}
+      <div
+        ref={menuRef}
+        className={`fixed inset-0 bg-white/95 backdrop-blur-md flex flex-col items-center justify-center space-y-8 transition-transform duration-300 z-40 lg:hidden ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Title in Mobile Menu */}
+        {visibleLinks.map((link) => (
+          <Button
+            key={link.name}
+            href={link.href}
+            isActive={pathname === link.href}
+            onClick={() => setIsOpen(false)}
+            className="text-2xl sm:text-3xl font-semibold drop-shadow-md text-[#373435] hover:text-[#F58634] transition-colors"
+          >
+            {link.name}
+          </Button>
+        ))}
+      </div>
     </>
   );
 };
