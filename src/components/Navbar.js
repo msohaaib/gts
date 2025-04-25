@@ -87,9 +87,7 @@ const Navbar = () => {
       {/* Navbar */}
       <nav
         className={`fixed top-0 left-0 w-full z-50 px-4 sm:px-6 lg:px-8 transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/80 backdrop-blur-md shadow-md"
-            : "bg-transparent"
+          isScrolled ? "hidden" : "bg-transparent"
         } ${isOpen ? "py-4" : "py-2 sm:py-3"}`}
       >
         <div className="max-w-7xl mx-auto flex flex-wrap items-end justify-between">

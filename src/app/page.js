@@ -324,7 +324,7 @@ export default function Home() {
       {/* Valued Clients Section */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gray-50 relative z-30">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center text-gray-800 mb-8 sm:mb-12 relative animate-fadeIn">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center text-gray-800 mb-8 sm:mb-12 relative">
             Our Valued Clients
             <span className="absolute bottom-[-8px] sm:bottom-[-12px] left-1/2 transform -translate-x-1/2 w-24 sm:w-32 h-1 bg-[#F58634] rounded-full"></span>
           </h2>
