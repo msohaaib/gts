@@ -252,6 +252,8 @@ export default function Home() {
         <div className="flex flex-col md:flex-row gap-6 items-center justify-center max-w-6xl mx-auto px-4 py-8 bg-white rounded-lg relative z-20">
           <div
             data-aos="fade-right"
+            data-aos-delay="100"
+            data-aos-duration="1000"
             className="space-y-4 text-sm sm:text-base lg:text-lg text-gray-600"
           >
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
@@ -276,13 +278,15 @@ export default function Home() {
               precision, speed, and full commitment to quality.
             </p>
             <Link href="/contact">
-              <Obutton className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 text-sm sm:text-base rounded-lg transition-transform duration-300 hover:scale-105">
+              <Obutton className="mt-4 text-white px-4 py-2 text-sm sm:text-base rounded-lg transition-transform duration-300 hover:scale-105">
                 Contact Us
               </Obutton>
             </Link>
           </div>
           <div
             data-aos="fade-left"
+            data-aos-delay="100"
+            data-aos-duration="1000"
             className="relative h-60 sm:h-72 md:h-80 w-full overflow-hidden rounded-tl-3xl rounded-br-3xl shadow-lg ring-2 ring-[#F58634] ring-opacity-40"
           >
             <Image
@@ -332,6 +336,8 @@ export default function Home() {
               <SwiperSlide key={index} className="h-full">
                 <div
                   data-aos="zoom-in"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
                   className="w-full max-w-xs h-full flex flex-col rounded-xl bg-white text-gray-700 shadow-md border border-[#F58634]/30 hover:shadow-lg hover:scale-105 transition-all duration-300 mx-auto"
                 >
                   <div className="relative mx-auto -mt-6 w-[calc(100%-1rem)] h-36 overflow-hidden rounded-xl shadow-sm">
@@ -373,6 +379,7 @@ export default function Home() {
             {servicesData.map((service, index) => (
               <div
                 data-aos="fade-down"
+                data-aos-duration="1000"
                 data-aos-delay={service.animate}
                 key={service.id}
                 className="bg-white rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out flex flex-col items-center text-center max-w-sm mx-auto"
@@ -408,6 +415,7 @@ export default function Home() {
       <section
         data-aos="fade-right"
         data-aos-delay="100"
+        data-aos-duration="1000"
         className="py-12 px-4 bg-gray-50 relative z-30"
       >
         <div className="max-w-6xl mx-auto">
@@ -470,6 +478,8 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div
               data-aos="zoom-in"
+              data-aos-delay="100"
+              data-aos-duration="1000"
               className="relative bg-white bg-opacity-20 backdrop-blur-lg p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out"
               style={{ animationDelay: "0.1s" }}
             >
@@ -505,6 +515,8 @@ export default function Home() {
             </div>
             <div
               data-aos="zoom-in"
+              data-aos-delay="100"
+              data-aos-duration="1000"
               className="relative bg-white bg-opacity-20 backdrop-blur-lg p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out"
               style={{ animationDelay: "0.2s" }}
             >
@@ -540,6 +552,8 @@ export default function Home() {
             </div>
             <div
               data-aos="zoom-in"
+              data-aos-delay="100"
+              data-aos-duration="1000"
               className="relative bg-white bg-opacity-20 backdrop-blur-lg p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out"
               style={{ animationDelay: "0.3s" }}
             >

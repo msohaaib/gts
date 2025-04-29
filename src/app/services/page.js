@@ -8,6 +8,8 @@ const services = [
     description:
       "Our cable pulling services are designed to provide efficient and safe installation of electrical and communication cables for commercial, industrial, and residential projects. Whether it’s trenching, underground, or overhead installation, we use the latest tools and techniques to ensure precise and timely execution, minimizing disruptions and ensuring long-lasting results.",
     image: "/HomeSection/home1.jpg",
+    dataAosImage: "fade-right",
+    dataAosText: "fade-left",
   },
   {
     id: 2,
@@ -21,6 +23,8 @@ const services = [
       "Compliance with safety and industry standards",
     ],
     image: "/HomeSection/home1.jpg",
+    dataAosImage: "fade-left",
+    dataAosText: "fade-right",
   },
   {
     id: 3,
@@ -28,6 +32,8 @@ const services = [
     description:
       "We specialize in wall cutting for both structural and non-structural walls. Using state-of-the-art equipment, our team can handle cutting through concrete, brick, and other materials for renovations, utility installations, or structural changes. Our precise, clean cuts ensure minimal disruption to your space and reduce the need for costly repairs.",
     image: "/HomeSection/Home2.jpg",
+    dataAosImage: "fade-right",
+    dataAosText: "fade-left",
   },
   {
     id: 4,
@@ -35,6 +41,8 @@ const services = [
     description:
       "Our excavation services are designed to support your construction and infrastructure projects, including site preparation, trenching, and grading. We also provide specialized services for drainage, foundation work, and utility installation.",
     image: "/HomeSection/home1.jpg",
+    dataAosImage: "fade-left",
+    dataAosText: "fade-right",
   },
   {
     id: 5,
@@ -42,6 +50,8 @@ const services = [
     description:
       "We offer professional waterproofing solutions to protect your property from water damage. Our team specializes in interior and exterior waterproofing for kitchen, washrooms, balcony, basements, foundations, roofs, and walls. By using advanced materials and techniques, we provide long-term protection against leaks, moisture, and dampness, helping to preserve the integrity of your structure.",
     image: "/HomeSection/home1.jpg",
+    dataAosImage: "fade-right",
+    dataAosText: "fade-left",
   },
   {
     id: 6,
@@ -49,6 +59,8 @@ const services = [
     description:
       "Our core cutting service is perfect for creating precise, circular holes in concrete, brick, or stone surfaces. Whether it's for plumbing, electrical, or HVAC installations, we provide clean and accurate cuts without compromising the integrity of your structure.",
     image: "/HomeSection/home1.jpg",
+    dataAosImage: "fade-left",
+    dataAosText: "fade-right",
   },
 ];
 
@@ -64,7 +76,7 @@ const Services = () => {
           }}
         >
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="absolute inset-0 bg-black opacity-40"></div>
         </div>
 
         {/* Header Content */}
@@ -89,20 +101,30 @@ const Services = () => {
           >
             {/* Service Image */}
             <div className="flex-1 flex justify-center">
-              <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md h-48 sm:h-64 md:h-80">
+              <div
+                data-aos={service.dataAosImage}
+                data-aos-delay="100"
+                data-aos-duration="1000"
+                className="relative w-full max-w-xs sm:max-w-sm md:max-w-md h-48 sm:h-64 md:h-80 rounded-tl-3xl rounded-br-3xl shadow-lg ring-2 ring-[#F58634] ring-opacity-40"
+              >
                 <Image
                   src={service.image}
-                  alt={`${service.title} - Chichi Enterprises`}
+                  alt={`${service.title} `}
                   fill
                   priority={service.id === 1} // Priority for first image only
-                  className="object-cover rounded-lg shadow-md"
+                  className="object-cover rounded-lg shadow-md rounded-tl-3xl rounded-br-3xl"
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                 />
               </div>
             </div>
 
             {/* Service Text */}
-            <div className="flex-1 space-y-4 text-center md:text-left">
+            <div
+              data-aos={service.dataAosText}
+              data-aos-delay="100"
+              data-aos-duration="1000"
+              className="flex-1 space-y-4 text-center md:text-left"
+            >
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
                 {service.title}
               </h2>
