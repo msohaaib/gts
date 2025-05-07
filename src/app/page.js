@@ -21,21 +21,21 @@ const images = [
     buttonLink: "/about",
   },
   {
-    src: "/HomeSection/Home2.jpg",
+    src: "/HomeSection/waterproffing.jpg",
     heading: "Waterproofing",
     text: "We offer professional waterproofing solutions to protect your property from water damage.",
     buttonLabel: "Learn More",
     buttonLink: "/services",
   },
   {
-    src: "/HomeSection/Home3.jpg",
+    src: "/HomeSection/corecutting.jpg",
     heading: "Core Cutting",
     text: "Our core cutting service is perfect for creating precise, circular holes in concrete, brick, or stone surfaces.",
     buttonLabel: "Learn More",
     buttonLink: "/designs",
   },
   {
-    src: "/HomeSection/Home4.jpeg",
+    src: "/HomeSection/cablepulling.jpeg",
     heading: "Cable Pulling",
     text: "Our cable pulling services are designed to provide efficient and safe installation of electrical and communication cables for commercial, industrial, and residential projects.",
     buttonLabel: "Learn More",
@@ -48,38 +48,38 @@ const strengths = [
     title: "Proven Expertise & Experience",
     description:
       "We bring years of hands-on experience in delivering top-notch technical services, with a team of certified professionals.",
-    image: "/HomeSection/Home2.jpg",
+    image: "/WhychooseUs/customer-satisfaction.png",
   },
   {
     title: "Quality and Safety",
     description:
       "We don’t cut corners. Our work meets the highest quality and safety standards, ensuring long-term reliability and peace of mind.",
-    image: "/HomeSection/home1.jpg",
+    image: "/WhychooseUs/safetyquality.gif",
   },
   {
     title: "Timely Delivery",
     description:
       "We pride ourselves on being responsive, efficient, and meeting deadlines without compromising quality.",
-    image: "/HomeSection/Home3.jpg",
+    image: "/WhychooseUs/timedelivery.jpeg",
   },
   {
     title: "Trusted by Top Clients",
     description:
       "We’ve earned the trust of industry leaders and respected organizations – a testament to our quality and commitment.",
-    image: "/HomeSection/home1.jpg",
+    image: "/WhychooseUs/trust.png",
   },
   {
     title: "Customized Services",
     description:
       "We understand every project is unique. Our team works closely with you to provide tailored solutions that match your exact requirements.",
-    image: "/HomeSection/home1.jpg",
+    image: "/WhychooseUs/customized.avif",
   },
 ];
 
 const servicesData = [
   {
     id: 1,
-    image: "/HomeSection/Home4.jpeg",
+    image: "/ServicesSection/cablepulling.jpeg",
     title: "Cable Pulling",
     description:
       "Our cable pulling services are designed to provide efficient and safe installation of electrical and communication cables for commercial, industrial, and residential projects.",
@@ -87,7 +87,7 @@ const servicesData = [
   },
   {
     id: 2,
-    image: "/HomeSection/Home4.jpeg",
+    image: "/ServicesSection/excavation.jpg",
     title: "Excavation Services",
     description:
       "Our excavation services are designed to support your construction and infrastructure projects, including site preparation, trenching, and grading. We also provide specialized services for drainage, foundation work, and utility installation.",
@@ -95,7 +95,7 @@ const servicesData = [
   },
   {
     id: 3,
-    image: "/HomeSection/Home4.jpeg",
+    image: "/ServicesSection/corecutting.jpg",
     title: "Core Cutting",
     description:
       "Our core cutting service is perfect for creating precise, circular holes in concrete, brick, or stone surfaces. Whether it's for plumbing, electrical, or HVAC installations, we provide clean and accurate cuts without compromising the integrity of your structure.",
@@ -282,6 +282,11 @@ export default function Home() {
                 Contact Us
               </Obutton>
             </Link>
+            <a href="/8719 DBMS lab 10.pdf" download className="mx-4 w-full">
+              <Obutton className="mt-4 text-white px-4 py-2 text-sm sm:text-base rounded-lg transition-transform duration-300 hover:scale-105">
+                Download Brochure
+              </Obutton>
+            </a>
           </div>
           <div
             data-aos="fade-left"
@@ -290,7 +295,7 @@ export default function Home() {
             className="relative h-60 sm:h-72 md:h-80 w-full overflow-hidden rounded-tl-3xl rounded-br-3xl shadow-lg ring-2 ring-[#F58634] ring-opacity-40"
           >
             <Image
-              src="/HomeSection/Home3.jpg"
+              src="/IntroductionSection/whoweare.jpg"
               alt="Technical Services"
               fill
               className="object-cover hover:scale-105 transition-transform duration-500 ease-in-out rounded-tl-3xl rounded-br-3xl"
@@ -308,7 +313,7 @@ export default function Home() {
         <div className="w-20 h-1 bg-[#F58634] rounded-full mx-auto mt-2"></div>
       </div>
 
-      <section className="py-8 px-4 relative">
+      <section className="py-8 px-4 relative mb-28">
         <div className="max-w-7xl mx-auto">
           <Swiper
             spaceBetween={16}
@@ -340,12 +345,12 @@ export default function Home() {
                   data-aos-duration="1000"
                   className="w-full max-w-xs h-full flex flex-col rounded-xl bg-white text-gray-700 shadow-md border border-[#F58634]/30 hover:shadow-lg hover:scale-105 transition-all duration-300 mx-auto"
                 >
-                  <div className="relative mx-auto -mt-6 w-[calc(100%-1rem)] h-36 overflow-hidden rounded-xl shadow-sm">
+                  <div className="relative mx-auto -mt-6 w-[calc(100%-1rem)] h-40 overflow-hidden rounded-xl shadow-sm">
                     <Image
-                      src={strength.image || "/HomeSection/home1.jpg"}
+                      src={strength.image}
                       alt={strength.title}
                       fill
-                      className="object-cover rounded-xl hover:scale-110 transition-transform duration-500 ease-in-out"
+                      className="object-contain rounded-xl hover:scale-110 transition-transform duration-500 ease-in-out"
                       onError={(e) =>
                         console.error(
                           `Failed to load image for ${strength.title}`

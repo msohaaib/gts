@@ -12,11 +12,11 @@ const About = () => {
         <div
           className="absolute inset-0 bg-cover bg-center md:bg-fixed"
           style={{
-            backgroundImage: `url("/HomeSection/Home3.jpg")`,
+            backgroundImage: `url("/about/aboutus.jpg")`,
           }}
         >
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black opacity-40"></div>
+          <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
 
         {/* Header Content */}
@@ -66,20 +66,20 @@ const About = () => {
             <Image
               width={500}
               height={300}
-              src="/HomeSection/Home3.jpg"
+              src="/about/mission.jpg"
               alt="Gafar Technical Services team collaborating on a project"
-              className="w-full h-auto rounded-lg"
+              className="object-cover rounded-lg shadow-md rounded-tl-3xl rounded-br-3xl"
               layout="responsive"
             />
           </div>
           {/* Vision */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 md:grolsid-c-2 gap-8 items-center">
             <Image
               width={500}
-              height={300}
-              src="/HomeSection/Home3.jpg"
+              height={400}
+              src="/about/ourvision.jpg"
               alt="Sustainable building solutions by Gafar Technical Services"
-              className="w-full h-auto rounded-lg"
+              className="object-cover rounded-lg shadow-md rounded-tl-3xl rounded-br-3xl"
               layout="responsive"
             />
             <div className="text-left">

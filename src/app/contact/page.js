@@ -1,7 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -9,14 +11,33 @@ const Contact = () => {
     message: "",
   });
 
+  const [status, setStatus] = useState("");
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Message sent!");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setStatus("Sending...");
+
+    emailjs
+      .sendForm(
+        "service_cmpc4ic", // Your Service ID
+        "template_01faxzo", // Your Template ID
+        formRef.current,
+        "Zov-qaZ5FKpVh85Ut" // Your Public Key
+      )
+      .then(
+        () => {
+          setStatus("Message sent successfully!");
+          setFormData({ name: "", email: "", subject: "", message: "" });
+        },
+        (error) => {
+          setStatus("Failed to send message. Please try again.");
+          console.error("EmailJS error:", error);
+        }
+      );
   };
 
   return (
@@ -26,10 +47,10 @@ const Contact = () => {
         <div
           className="absolute inset-0 bg-cover bg-center md:bg-fixed"
           style={{
-            backgroundImage: `url("/HomeSection/Home3.jpg")`,
+            backgroundImage: `url("/contact/contactus.avif")`,
           }}
         >
-          <div className="absolute inset-0 bg-black opacity-40"></div>
+          <div className="absolute inset-0 bg-black opacity-30"></div>
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
@@ -69,7 +90,12 @@ const Contact = () => {
                 ></path>
               </svg>
               <h3 className="text-lg font-semibold text-gray-800">Phone</h3>
-              <p className="text-gray-600">+1 (555) 123-4567</p>
+              <a
+                href="tel:+971561767178"
+                className="text-gray-600 hover:underline"
+              >
+                +971 56 176 7178
+              </a>
             </div>
             <div
               data-aos="fade-up"
@@ -92,7 +118,12 @@ const Contact = () => {
                 ></path>
               </svg>
               <h3 className="text-lg font-semibold text-gray-800">Email</h3>
-              <p className="text-gray-600">info@gafartechnical.com</p>
+              <a
+                href="mailto:info@gafartechnical.com"
+                className="text-gray-600 hover:underline"
+              >
+                info@gafartechnical.com
+              </a>
             </div>
             <div
               data-aos="fade-up"
@@ -161,6 +192,7 @@ const Contact = () => {
             Send Us a Message
           </h2>
           <form
+            ref={formRef}
             data-aos="zoom-in"
             data-aos-delay="100"
             data-aos-duration="1000"
@@ -246,6 +278,7 @@ const Contact = () => {
               >
                 Send
               </button>
+              {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
             </div>
           </form>
         </div>

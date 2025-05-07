@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { RiTiktokLine } from "react-icons/ri";
 
 const Footer = () => {
   return (
@@ -72,7 +73,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#F58634]"
               >
-                <FaTwitter size={24} />
+                <RiTiktokLine size={24} />
               </a>
               <a
                 href="https://www.linkedin.com"

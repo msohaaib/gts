@@ -7,7 +7,7 @@ const services = [
     title: "Cable Pulling",
     description:
       "Our cable pulling services are designed to provide efficient and safe installation of electrical and communication cables for commercial, industrial, and residential projects. Whether it’s trenching, underground, or overhead installation, we use the latest tools and techniques to ensure precise and timely execution, minimizing disruptions and ensuring long-lasting results.",
-    image: "/HomeSection/home1.jpg",
+    image: "/Services/cablepulling.jpeg",
     dataAosImage: "fade-right",
     dataAosText: "fade-left",
   },
@@ -22,7 +22,7 @@ const services = [
       "Labeling, testing, and documentation",
       "Compliance with safety and industry standards",
     ],
-    image: "/HomeSection/home1.jpg",
+    image: "/Services/glidingtermination.jpeg",
     dataAosImage: "fade-left",
     dataAosText: "fade-right",
   },
@@ -40,7 +40,7 @@ const services = [
     title: "Excavation Services",
     description:
       "Our excavation services are designed to support your construction and infrastructure projects, including site preparation, trenching, and grading. We also provide specialized services for drainage, foundation work, and utility installation.",
-    image: "/HomeSection/home1.jpg",
+    image: "/Services/excavation.jpg",
     dataAosImage: "fade-left",
     dataAosText: "fade-right",
   },
@@ -49,7 +49,7 @@ const services = [
     title: "Waterproofing",
     description:
       "We offer professional waterproofing solutions to protect your property from water damage. Our team specializes in interior and exterior waterproofing for kitchen, washrooms, balcony, basements, foundations, roofs, and walls. By using advanced materials and techniques, we provide long-term protection against leaks, moisture, and dampness, helping to preserve the integrity of your structure.",
-    image: "/HomeSection/home1.jpg",
+    image: "/Services/waterproffing.jpg",
     dataAosImage: "fade-right",
     dataAosText: "fade-left",
   },
@@ -58,7 +58,7 @@ const services = [
     title: "Core Cutting",
     description:
       "Our core cutting service is perfect for creating precise, circular holes in concrete, brick, or stone surfaces. Whether it's for plumbing, electrical, or HVAC installations, we provide clean and accurate cuts without compromising the integrity of your structure.",
-    image: "/HomeSection/home1.jpg",
+    image: "/Services/corecutting.jpg",
     dataAosImage: "fade-left",
     dataAosText: "fade-right",
   },
@@ -70,13 +70,13 @@ const Services = () => {
       <div className="relative min-h-[50vh] md:min-h-[60vh]">
         {/* Background Image with Overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center md:bg-fixed"
+          className="absolute inset-0 bg-no-repeat bg-center md:bg-fixed"
           style={{
-            backgroundImage: `url("/HomeSection/Home3.jpg")`,
+            backgroundImage: `url("/Services/ourservices.svg")`,
           }}
         >
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black opacity-40"></div>
+          <div className="absolute inset-0 bg-black opacity-30"></div>
         </div>
 
         {/* Header Content */}

@@ -23,7 +23,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Scroll Indicator Logic
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -100,16 +99,16 @@ const Navbar = () => {
                 width={60}
                 height={30}
                 priority
-                className="object-contain drop-shadow-md w-12 sm:w-16 lg:w-20 mb-2"
+                className="object-contain drop-shadow-md w-12 sm:w-16 lg:w-16 mb-2"
               />
             </Link>
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold leading-tight flex flex-col ">
+            <h1 className="text-xl sm:text-2xl lg:text-2xl font-extrabold leading-tight flex flex-col">
               <span className="text-[#F58634]">Gafar Technical</span>
               <span className="text-[#373435]">Services LLC</span>
             </h1>
           </div>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav - Always hidden on small screens */}
           <div className="hidden lg:flex space-x-6 items-center mb-4">
             {visibleLinks.map((link) => (
               <Button
@@ -123,7 +122,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Hamburger Button */}
+          {/* Hamburger Button - Only visible on small screens */}
           <button
             ref={buttonRef}
             className="lg:hidden z-50 p-2"
@@ -148,14 +147,13 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Only visible when isOpen is true */}
       <div
         ref={menuRef}
         className={`fixed inset-0 bg-white/95 backdrop-blur-md flex flex-col items-center justify-center space-y-8 transition-transform duration-300 z-40 lg:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Title in Mobile Menu */}
         {visibleLinks.map((link) => (
           <Button
             key={link.name}
