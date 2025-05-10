@@ -11,6 +11,7 @@ import Obutton from "../components/OButton";
 import CountUp from "react-countup";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { HiOutlineCheckBadge } from "react-icons/hi2";
 
 const images = [
   {
@@ -433,7 +434,7 @@ export default function Home() {
         data-aos="fade-right"
         data-aos-delay="100"
         data-aos-duration="1000"
-        className="py-12 px-4 bg-gray-50 relative z-30"
+        className="py-24 px-4 bg-gray-50 relative z-30"
       >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 relative">
@@ -486,13 +487,13 @@ export default function Home() {
       </section>
 
       {/* Achievements Section */}
-      <section className="py-12 px-4 bg-gradient-to-b from-gray-100 to-gray-200 relative z-30">
+      <section className="py-24 px-4 bg-gradient-to-b from-gray-100 to-gray-200 relative z-30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 relative">
             Our Achievements
             <span className="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-20 h-1 bg-[#F58634] rounded-full"></span>
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div
               data-aos="zoom-in"
               data-aos-delay="100"
@@ -602,6 +603,30 @@ export default function Home() {
               </h3>
               <p className="text-base font-medium text-gray-700 text-center">
                 Ongoing Projects
+              </p>
+            </div>
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+              className="relative bg-white bg-opacity-20 backdrop-blur-lg p-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out"
+              style={{ animationDelay: "0.3s" }}
+            >
+              <div className="flex justify-center mb-3">
+                <HiOutlineCheckBadge className="w-8 h-8 text-orange-500" />
+              </div>
+              <h3 className="text-4xl sm:text-5xl font-extrabold text-center bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent mb-2">
+                <CountUp
+                  end={10}
+                  duration={2}
+                  delay={0.6}
+                  enableScrollSpy
+                  scrollSpyOnce
+                />
+                +
+              </h3>
+              <p className="text-base font-medium text-gray-700 text-center">
+                10 Years of Experience
               </p>
             </div>
           </div>
