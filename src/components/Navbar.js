@@ -15,10 +15,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -51,17 +48,19 @@ const Navbar = () => {
         setIsOpen(false);
       }
     };
-
+    const handleKeyDown = (event) => {
+      if (isOpen && event.key === "Escape") setIsOpen(false);
+    };
     if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
-
-    document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      document.body.style.overflow = "";
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpen]);
 
@@ -150,8 +149,8 @@ const Navbar = () => {
       {/* Mobile Menu - Only visible when isOpen is true */}
       <div
         ref={menuRef}
-        className={`fixed inset-0 bg-white/95 backdrop-blur-md flex flex-col items-center justify-center space-y-8 transition-transform duration-300 z-40 lg:hidden ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed inset-0 bg-white/95 backdrop-blur-md flex flex-col items-center justify-center space-y-8 z-40 lg:hidden ${
+          isOpen ? "block" : "hidden"
         }`}
       >
         {visibleLinks.map((link) => (

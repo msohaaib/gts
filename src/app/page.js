@@ -104,16 +104,10 @@ const servicesData = [
 ];
 
 const clients = [
-  {
-    name: "A&M General Contracting",
-    logo: "/HomeSection/home1.jpg",
-  },
+  { name: "A&M General Contracting", logo: "/HomeSection/home1.jpg" },
   { name: "AL Firas", logo: "/HomeSection/home1.jpg" },
   { name: "Baps Hindu Mandir", logo: "/HomeSection/home1.jpg" },
-  {
-    name: "AL Sahil General Contracting",
-    logo: "/HomeSection/home1.jpg",
-  },
+  { name: "AL Sahil General Contracting", logo: "/HomeSection/home1.jpg" },
   { name: "EHV", logo: "/HomeSection/home1.jpg" },
   { name: "Y&H", logo: "/HomeSection/home1.jpg" },
 ];
@@ -223,7 +217,7 @@ export default function Home() {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M15 19l-7-7 7-7"
-              ></path>
+              />
             </svg>
           </div>
           <div className="swiper-button-next-hero hidden sm:block absolute right-4 top-1/2 -translate-y-1/2 z-30 group bg-gradient-to-r from-[#f97316] to-[#f59e0b] text-white p-2 rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:from-white hover:to-white hover:text-orange-500 cursor-pointer">
@@ -239,7 +233,7 @@ export default function Home() {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M9 5l7 7-7 7"
-              ></path>
+              />
             </svg>
           </div>
         </Swiper>
@@ -249,17 +243,33 @@ export default function Home() {
 
       {/* Introduction Section */}
       <section className="bg-lines-pattern my-12 sm:my-16">
-        <div className="flex flex-col md:flex-row gap-6 items-center justify-center max-w-6xl mx-auto px-4 py-8 bg-white rounded-lg relative z-20">
+        <div className="flex flex-col md:flex-row-reverse gap-6 items-center justify-center max-w-6xl mx-auto px-4 py-8 bg-white rounded-lg relative z-20">
+          {/* Heading and Description Wrapper */}
           <div
             data-aos="fade-right"
             data-aos-delay="100"
             data-aos-duration="1000"
-            className="space-y-4 text-sm sm:text-base lg:text-lg text-gray-600"
+            className="space-y-4 text-sm sm:text-base lg:text-lg text-gray-600 order-2 md:order-1"
           >
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 text-center md:text-left">
               WHO WE ARE
             </h1>
-            <div className="w-20 h-1 bg-[#F58634] rounded-full"></div>
+            {/* Image - Inserted here for mobile view */}
+            <div
+              data-aos="fade-left"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+              className="order-1 md:order-2 md:hidden relative h-60 sm:h-72 w-full overflow-hidden rounded-tl-3xl rounded-br-3xl shadow-lg ring-2 ring-[#F58634] ring-opacity-40"
+            >
+              <Image
+                src="/IntroductionSection/whoweare.jpg"
+                alt="Technical Services"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500 ease-in-out rounded-tl-3xl rounded-br-3xl"
+                priority
+              />
+            </div>
+            <div className="w-20 h-1 bg-[#F58634] rounded-full mx-auto md:mx-0"></div>
             <p>
               Welcome to{" "}
               <span className="font-semibold text-[#F58634]">
@@ -282,17 +292,19 @@ export default function Home() {
                 Contact Us
               </Obutton>
             </Link>
-            <a href="/8719 DBMS lab 10.pdf" download className="mx-4 w-full">
+            <a href="/GTSProfile.pdf" download className="mx-4 w-full">
               <Obutton className="mt-4 text-white px-4 py-2 text-sm sm:text-base rounded-lg transition-transform duration-300 hover:scale-105">
-                Download Brochure
+                Company Profile
               </Obutton>
             </a>
           </div>
+
+          {/* Image - Desktop view */}
           <div
             data-aos="fade-left"
             data-aos-delay="100"
             data-aos-duration="1000"
-            className="relative h-60 sm:h-72 md:h-80 w-full overflow-hidden rounded-tl-3xl rounded-br-3xl shadow-lg ring-2 ring-[#F58634] ring-opacity-40"
+            className="hidden md:block relative h-60 sm:h-72 md:h-80 w-full overflow-hidden rounded-tl-3xl rounded-br-3xl shadow-lg ring-2 ring-[#F58634] ring-opacity-40"
           >
             <Image
               src="/IntroductionSection/whoweare.jpg"
@@ -501,7 +513,7 @@ export default function Home() {
                     strokeLinejoin="round"
                     strokeWidth="2"
                     d="M17 20h5v-2a2 2 0 00-2-2h-3m-4 4H7a2 2 0 01-2-2v-2m12-6a4 4 0 11-8 0 4 4 0 018 0z"
-                  ></path>
+                  />
                 </svg>
               </div>
               <h3 className="text-4xl sm:text-5xl font-extrabold text-center bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent mb-2">
@@ -538,7 +550,7 @@ export default function Home() {
                     strokeLinejoin="round"
                     strokeWidth="2"
                     d="M5 13l4 4L19 7"
-                  ></path>
+                  />
                 </svg>
               </div>
               <h3 className="text-4xl sm:text-5xl font-extrabold text-center bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent mb-2">
@@ -575,7 +587,7 @@ export default function Home() {
                     strokeLinejoin="round"
                     strokeWidth="2"
                     d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                  ></path>
+                  />
                 </svg>
               </div>
               <h3 className="text-4xl sm:text-5xl font-extrabold text-center bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent mb-2">

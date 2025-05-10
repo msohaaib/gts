@@ -20,7 +20,7 @@ const About = () => {
         </div>
 
         {/* Header Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-[50vh] text-center px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 flex flex-col items-center justify-center min-h-[80vh] md:min-h-[65vh] text-center px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             About Gafar Technical Services LLC
           </h1>
@@ -28,6 +28,11 @@ const About = () => {
             Discover our range of professional services designed to help your
             business thrive in today&apos;s competitive market.
           </p>
+          <a href="/GTSProfile.pdf" download className="mx-4 w-full">
+            <Obutton className="mt-4 text-white px-4 py-2 text-sm sm:text-base rounded-lg transition-transform duration-300 hover:scale-105">
+              Company Profile
+            </Obutton>
+          </a>
         </div>
       </div>
 

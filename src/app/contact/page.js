@@ -43,14 +43,14 @@ const Contact = () => {
   return (
     <div className="flex flex-col">
       {/* Header Section */}
-      <div className="relative h-[40vh] sm:h-[50vh]">
+      <div className="relative h-[50vh] sm:h-[60vh]">
         <div
           className="absolute inset-0 bg-cover bg-center md:bg-fixed"
           style={{
-            backgroundImage: `url("/contact/contactus.avif")`,
+            backgroundImage: `url("/contact/contactus.jpg")`,
           }}
         >
-          <div className="absolute inset-0 bg-black opacity-30"></div>
+          <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
