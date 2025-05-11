@@ -43,13 +43,32 @@ const About = () => {
             Company Overview
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            <span className="font-bold">GAFAR TECHNICAL SERVICES</span> has been
-            at the forefront of the technical services industry for over 10
-            years. We pride ourselves on providing innovative solutions,
-            outstanding customer service, and a dedicated team of experts. Our
-            mission is to ensure that every project, no matter the size, is
-            completed with the highest level of professionalism and attention to
-            detail.
+            Established in 2014,{" "}
+            <span className="font-bold">Gafa Technical Services LLC</span>. has
+            built a strong reputation as a reliable and client-focused technical
+            services provider. With over a decade of hands-on experience, we
+            have become a trusted name in the industry, known for delivering
+            precision-driven solutions that meet — and often exceed — client
+            expectations. Our commitment to quality, safety, and customer
+            satisfaction has earned us long-term partnerships and a solid
+            presence in the market.
+          </p>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            We specialize in a wide range of services including cable pulling
+            and laying, gliding and termination, wall cutting and chasing,
+            excavation works, core cutting, and professional waterproofing. Each
+            project we undertake is handled with the highest level of care,
+            efficiency, and technical expertise. Our skilled team works closely
+            with clients, understanding their specific needs and tailoring our
+            services accordingly to ensure flawless execution and long-lasting
+            results.
+          </p>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <span className="font-bold">Gafa Technical Services LLC</span> ,we
+            don’t just complete tasks — we deliver solutions that support your
+            project’s success from the ground up. Whether it’s a small technical
+            job or a large-scale infrastructure task, our goal remains the same:
+            to do the work exactly as you expect, with no compromises.
           </p>
         </div>
       </div>
@@ -59,23 +78,27 @@ const About = () => {
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Mission */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="text-left">
-              <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">
-                Our Mission
-              </h3>
-              <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-                To be the trusted partner in solving complex technical
-                challenges with precision, integrity, and excellence.
-              </p>
-            </div>
             <Image
               width={500}
               height={300}
               src="/about/mission.jpg"
               alt="Gafar Technical Services team collaborating on a project"
-              className="object-cover rounded-lg shadow-md rounded-tl-3xl rounded-br-3xl"
+              className="object-cover rounded-lg shadow-md rounded-tl-3xl rounded-br-3xl order-1 md:order-2"
               layout="responsive"
             />
+            <div className="text-left order-2 md:order-1">
+              <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">
+                Our Mission
+              </h3>
+              <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
+                Our mission is to deliver reliable, high-quality technical
+                services that align perfectly with our clients’ expectations. We
+                are committed to providing safe, precise, and efficient
+                solutions through skilled craftsmanship, advanced techniques,
+                and a client-first approach. Every project we handle reflects
+                our dedication to excellence, integrity, and long-term value.
+              </p>
+            </div>
           </div>
           {/* Vision */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -92,16 +115,19 @@ const About = () => {
                 Our Vision
               </h3>
               <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-                To be a leading force in construction and MEP services,
-                delivering smart, sustainable, and high-performance building
-                solutions.
+                To be recognized as a leading technical services company in the
+                region — trusted for our expertise, valued for our reliability,
+                and chosen for our unwavering commitment to client satisfaction.
+                We aim to set industry standards by continually evolving,
+                embracing innovation, and building enduring partnerships based
+                on trust and performance.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Call to Action Section (Unchanged) */}
+      {/* Call to Action Section */}
       <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-100">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">
