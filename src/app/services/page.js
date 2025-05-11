@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import Obutton from "../../components/OButton";
 
 const services = [
   {
@@ -31,7 +33,7 @@ const services = [
     title: "Wall Cutting",
     description:
       "We specialize in wall cutting for both structural and non-structural walls. Using state-of-the-art equipment, our team can handle cutting through concrete, brick, and other materials for renovations, utility installations, or structural changes. Our precise, clean cuts ensure minimal disruption to your space and reduce the need for costly repairs.",
-    image: "/HomeSection/Home2.jpg",
+    image: "/Services/wallcutting.jpg",
     dataAosImage: "fade-right",
     dataAosText: "fade-left",
   },
@@ -141,6 +143,22 @@ const Services = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-100">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">
+            Ready to Work With Us?
+          </h2>
+          <p className="text-base sm:text-lg text-gray-900 max-w-2xl mx-auto mb-6">
+            Contact us today to discuss your project and discover how Gafar
+            Technical Services can deliver exceptional results.
+          </p>
+          <Link href="/contact">
+            <Obutton className="mt-4 text-white px-4 py-2 text-sm sm:text-base rounded-lg transition-transform duration-300 hover:scale-105">
+              Get in Touch
+            </Obutton>
+          </Link>
+        </div>
       </div>
     </>
   );

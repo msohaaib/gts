@@ -78,7 +78,7 @@ const About = () => {
             />
           </div>
           {/* Vision */}
-          <div className="grid grid-cols-1 md:grolsid-c-2 gap-8 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <Image
               width={500}
               height={400}
