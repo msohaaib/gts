@@ -86,7 +86,7 @@ const Services = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Our Services
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-xl md:max-w-2xl">
+          <p className="text-base sm:text-lg md:text-xl text-white max-w-xl md:max-w-2xl">
             Discover our range of professional services designed to help your
             business thrive in today&apos;s competitive market.
           </p>
@@ -108,6 +108,7 @@ const Services = () => {
                 data-aos-delay="100"
                 data-aos-duration="1000"
                 className="relative w-full max-w-xs sm:max-w-sm md:max-w-md h-48 sm:h-64 md:h-80 rounded-tl-3xl rounded-br-3xl shadow-lg ring-2 ring-[#F58634] ring-opacity-40"
+                style={{ aspectRatio: "4 / 3" }}
               >
                 <Image
                   src={service.image}
